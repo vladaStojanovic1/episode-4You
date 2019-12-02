@@ -34,15 +34,15 @@ const Shows = () => {
         })
         setShows(sortedByRating);
         setLoading(false)
+        localStorage.setItem('my-shows', JSON.stringify(newShows));
     }
-
 
 
 
     return (
         <div style={{ textAlign: 'center' }}>
             <SearchBar shows={shows} setShows={setShows} />
-            <h1 className='popular-shows'>Popular Shows</h1>
+
 
             {loading ? <Loader type='Plane' width={400} height={400} color='#00CDBF' /> :
 
