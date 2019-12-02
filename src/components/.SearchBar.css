@@ -1,0 +1,14 @@
+.input-search {
+    width: 20%;
+    margin-top: 13px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #0000001c;
+    outline: none;
+    font-size: 18px;
+}
+
+.search-bar{
+    text-align: center;
+}

@@ -1,0 +1,18 @@
+.show-card span{
+    position: absolute;
+    top: 1px;
+    right: 15px;
+    padding: 7px;
+    border-radius: 50%;
+    background: '#00CDBF';
+    color: 'black';
+    font-weight: 'bold';
+}
+.show-card{
+    position: relative;
+    margin-bottom: 30px;
+}
+.show-card h5{
+    margin-top: 10px;
+    font-size: 20px;
+}
