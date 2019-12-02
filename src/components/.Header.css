@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Pangolin&display=swap');
+
+.logo{
+    font-family: 'Pangolin', cursive;
+    color: white;
+}
+.header{
+    background-image: linear-gradient(to right top, #271f23, #292228, #2a252c, #2b2831, #2c2c35, #31333c, #363b43, #3b4249, #484f54, #575d5f, #666a6b, #777878);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.header-link{
+    list-style: none;
+    text-decoration: none;
+}
+.logo-icon{
+    vertical-align: middle;
+    font-size: 30px;
+}
