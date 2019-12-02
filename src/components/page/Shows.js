@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Show } from '../entities/Show';
 import SearchBar from '../SearchBar';
-import GridLoader from 'react-spinners/GridLoader';
-import ShowCard from '../ShowCard';
+import DisplayShows from '../DisplayShows';
 import '../page/.Show.css';
 import Loader from 'react-loader-spinner'
+import ButtonListCard from '../ButtonListCard';
 
 const Shows = () => {
-
-    /********* State ********/
+    // Get list or card UI
+    const card = JSON.parse(localStorage.getItem('list-card'))
+    /***************** State *****************/
     const [shows, setShows] = useState([]);
     const [loading, setLoading] = useState(true);
     const [ascending, setAscending] = useState(true);
-    /********* State ********/
+    const [cardList, setCardList] = useState(card);
+    /***************** State *****************/
 
     useEffect(() => {
         fetchShows()
@@ -24,7 +26,7 @@ const Shows = () => {
         const showsRes = await data.json();
 
         const newShows = showsRes.map((show) => {
-            return new Show(show.name, show.image.medium, show.rating.average, show.id)
+            return new Show(show.name, show.image.medium, show.rating.average, show.id, show.genres, show.premiered)
         })
         // Sort by abc
         const sortedByRating = newShows.sort((a, b) => {
@@ -37,18 +39,30 @@ const Shows = () => {
         localStorage.setItem('my-shows', JSON.stringify(newShows));
     }
 
-
+    // Sort and slice top 50 Shows
+    const handleSort = () => {
+        if (ascending) {
+            const sortedByRating = shows.sort((a, b) => b.rating - a.rating).slice(0, 50);
+            setShows(sortedByRating)
+            setAscending(false)
+        } else {
+            const storage = JSON.parse(localStorage.getItem('my-shows'))
+            setShows(storage)
+            setAscending(true)
+        }
+    }
+    // Change UI Card or List
+    const changeView = () => {
+        const newView = !cardList;
+        setCardList(newView)
+        localStorage.setItem('list-card', newView);
+    }
 
     return (
         <div style={{ textAlign: 'center', minHeight: '100%' }}>
             <SearchBar shows={shows} setShows={setShows} />
-
-
-            {loading ? <Loader type='Plane' width={400} height={400} color='#00CDBF' /> :
-
-                <div className='shows-content'>
-                    <ShowCard shows={shows} />
-                </div>}
+            <ButtonListCard handleSort={handleSort} changeView={changeView} cardList={cardList} ascending={ascending} />
+            {loading ? <Loader type='Plane' width={400} height={400} color='#00CDBF' /> : <DisplayShows shows={shows} cardList={cardList} />}
         </div>
     );
 }

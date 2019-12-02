@@ -12,7 +12,6 @@ const SearchBar = ({ shows, setShows }) => {
     const [filterShows, setFilterShows] = useState('');
     /***** State****/
 
-
     /******* Filter ********/
     useEffect(() => {
         const fill = shows.filter(show => {

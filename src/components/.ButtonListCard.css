@@ -1,0 +1,32 @@
+.sort-btn{
+    border: none;
+    background: repeating-linear-gradient(45deg, #d39e00, transparent 116px);
+    padding: 3px;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-div{
+    display: flex;
+    justify-content: space-between;
+    width: 53%;
+    margin: auto;
+    margin-top: 50px;
+    align-items: center;
+}
+.icons-view {
+    font-size: 27px;
+    cursor: pointer;
+}
+.icons-view rect{
+    color: #d39e00;
+}
+.icons-view path{
+    color: #d39e00;
+}
+.sort-btn svg path{
+    color: black;
+}

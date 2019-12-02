@@ -4,9 +4,9 @@
     right: 15px;
     padding: 7px;
     border-radius: 50%;
-    background: '#00CDBF';
-    color: 'black';
-    font-weight: 'bold';
+    background: #00CDBF;
+    color: black;
+    font-weight: bold;
 }
 .show-card{
     position: relative;
