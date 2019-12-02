@@ -5,6 +5,7 @@
     width: 55%;
     margin:100px auto;
     text-align: center;
+    min-height: 100%;
 }
 .popular-shows{
     font-weight: 500;

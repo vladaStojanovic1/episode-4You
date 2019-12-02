@@ -40,7 +40,7 @@ const Shows = () => {
 
 
     return (
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', minHeight: '100%' }}>
             <SearchBar shows={shows} setShows={setShows} />
 
 
