@@ -1,0 +1,15 @@
+.genre{
+    display: flex;
+    margin-top: 15px;
+}
+.genre-item{
+    padding: 4px;
+    border-radius: 10px;
+    margin: 5px;
+    box-shadow: 1px 0px 4px 0 black;
+    font-size: 13px;
+    color: black;
+    font-weight: 600;
+    /* background: repeating-linear-gradient(45deg, lightgreen, transparent 61px); */
+    background: repeating-linear-gradient(23deg, lightgreen, transparent 62px);
+}

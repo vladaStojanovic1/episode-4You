@@ -15,12 +15,35 @@ const Shows = () => {
     const [loading, setLoading] = useState(true);
     const [ascending, setAscending] = useState(true);
     const [cardList, setCardList] = useState(card);
+    const [error, setError] = useState(false);
+    const [filterShows, setFilterShows] = useState('');
     /***************** State *****************/
 
+    /********** Use Effect *************/
     useEffect(() => {
         fetchShows()
     }, [])
 
+    /******* Filter ********/
+    useEffect(() => {
+        const fill = shows.filter(show => {
+            return show.name.toLowerCase().includes(filterShows.toLowerCase())
+        })
+
+        if (filterShows && fill.length === 0) {
+            setError(true);
+        } else {
+            setError(false)
+        }
+
+        if (filterShows.length) {
+            return setShows(fill)
+        } else {
+            return setShows(shows)
+        }
+    }, [filterShows])
+    /******* Filter ********/
+    /********** Use Effect *************/
 
     const fetchShows = async () => {
         const data = await fetch('http://api.tvmaze.com/shows');
@@ -59,14 +82,26 @@ const Shows = () => {
         localStorage.setItem('list-card', newView);
     }
 
+    // Filter Shows
+    const handleFilter = (e) => {
+        setFilterShows(e.target.value)
+        const storage = JSON.parse(localStorage.getItem('my-shows'));
+        if (storage) {
+            setShows(storage)
+        }
+    }
+
+
     return (
         <div style={{ textAlign: 'center', minHeight: '100%' }}>
-            <SearchBar shows={shows} setShows={setShows} />
+            <SearchBar filterShows={filterShows} handleFilter={handleFilter} />
             <ButtonListCard
                 handleSort={handleSort}
                 changeView={changeView}
                 cardList={cardList}
-                ascending={ascending} />
+                ascending={ascending}
+                error={error}
+            />
             {loading ? <Loader type='Plane' width={200} height={400} color='#00CDBF' /> : <DisplayShows shows={shows} cardList={cardList} />}
         </div>
     );

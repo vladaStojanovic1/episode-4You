@@ -1,44 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { FaSearch } from 'react-icons/fa';
-import Error from './Error';
 import './.SearchBar.css';
 
-
-
-const SearchBar = ({ shows, setShows }) => {
-
-    /***** State****/
-    const [error, setError] = useState(false);
-    const [filterShows, setFilterShows] = useState('');
-    /***** State****/
-
-    /******* Filter ********/
-    useEffect(() => {
-        const fill = shows.filter(show => {
-            return show.name.toLowerCase().includes(filterShows.toLowerCase())
-        })
-
-        if (filterShows && fill.length === 0) {
-            setError(true);
-        } else {
-            setError(false)
-        }
-
-        if (filterShows.length) {
-            return setShows(fill)
-        } else {
-            return setShows(shows)
-        }
-    }, [filterShows])
-    /******* Filter ********/
-
-    const handleFilter = (e) => {
-        setFilterShows(e.target.value)
-        const storage = JSON.parse(localStorage.getItem('my-shows'));
-        if (storage) {
-            setShows(storage)
-        }
-    }
+const SearchBar = ({ filterShows, handleFilter }) => {
 
     return (
         <div className='search-bar'>
@@ -48,7 +12,6 @@ const SearchBar = ({ shows, setShows }) => {
                 onChange={handleFilter}
                 className='input-search'
                 placeholder='Search Shows' />
-            {error ? <Error /> : <h1>Popular Shows</h1>}
         </div>
     );
 }

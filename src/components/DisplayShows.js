@@ -7,7 +7,6 @@ import './.DisplayCard.css';
 const DisplayShows = ({ shows, cardList }) => {
 
 
-
     return (
         <>
             {cardList ?
