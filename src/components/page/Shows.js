@@ -5,6 +5,7 @@ import DisplayShows from '../DisplayShows';
 import '../page/.Show.css';
 import Loader from 'react-loader-spinner'
 import ButtonListCard from '../ButtonListCard';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 
 const Shows = () => {
     // Get list or card UI
@@ -61,8 +62,12 @@ const Shows = () => {
     return (
         <div style={{ textAlign: 'center', minHeight: '100%' }}>
             <SearchBar shows={shows} setShows={setShows} />
-            <ButtonListCard handleSort={handleSort} changeView={changeView} cardList={cardList} ascending={ascending} />
-            {loading ? <Loader type='Plane' width={400} height={400} color='#00CDBF' /> : <DisplayShows shows={shows} cardList={cardList} />}
+            <ButtonListCard
+                handleSort={handleSort}
+                changeView={changeView}
+                cardList={cardList}
+                ascending={ascending} />
+            {loading ? <Loader type='Plane' width={200} height={400} color='#00CDBF' /> : <DisplayShows shows={shows} cardList={cardList} />}
         </div>
     );
 }

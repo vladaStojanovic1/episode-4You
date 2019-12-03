@@ -1,6 +1,7 @@
 import React from 'react';
 import './.DisplayList.css';
 import { FaStar } from "react-icons/fa";
+import LightSpeed from 'react-reveal/LightSpeed';
 
 const DisplayList = ({ shows }) => {
     return (
@@ -12,12 +13,14 @@ const DisplayList = ({ shows }) => {
                             <img className='image-list' src={show.image} />
                         </div>
 
-                        <div className='list-info'>
-                            <h2>{show.name}</h2>
-                            <h5>{show.genres.join(' | ')}</h5>
-                            <span className='list-rating'><FaStar className='icon-star' color="lime" />{show.rating}</span>
-                            <p>Premiered: <span>{show.premiered}</span></p>
-                        </div>
+                        <LightSpeed right cascade>
+                            <div className='list-info'>
+                                <h2>{show.name}</h2>
+                                <h5>{show.genres.join(' | ')}</h5>
+                                <span className='list-rating'><FaStar className='icon-star' color="lime" />{show.rating}</span>
+                                <p>Premiered: <span>{show.premiered}</span></p>
+                            </div>
+                        </LightSpeed>
                     </div>
                 )
             })}
