@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Actor } from '../entities/Actor';
 import ShowDescription from '../ShowDescription';
 import Loader from 'react-loader-spinner'
+import ActorInfo from '../ActorInfo';
 
 const ShowInfo = ({ match }) => {
     /***************** State *****************/
     const [actorInfo, setActorInfo] = useState([]);
-    const [showInfo, setShowInfo] = useState({ name: '', descriptions: '', image: '', rating: '', genres: '' })
+    const [showInfo, setShowInfo] = useState({ name: '', descriptions: '', image: '', rating: '', genres: '', id: '' })
     const [loading, setLoading] = useState(true)
     const [genres, setGenres] = useState();
     const [episodesNumber, setEpisodesNumber] = useState('');
@@ -19,12 +20,20 @@ const ShowInfo = ({ match }) => {
     const fetchCast = async () => {
         const data = await fetch(`http://api.tvmaze.com/shows/${match.params.id}?embed[]=episodes&embed[]=cast`);
         const dataCast = await data.json();
+        console.log(dataCast);
 
         const actor = dataCast._embedded.cast.map((actor) => {
             return new Actor(actor.person.name, actor.person.image.medium);
         })
         setEpisodesNumber(dataCast._embedded.episodes.length)
-        setShowInfo({ name: dataCast.name, descriptions: dataCast.summary, image: dataCast.image.original, rating: dataCast.rating.average, genres: dataCast.genres });
+        setShowInfo({
+            name: dataCast.name,
+            descriptions: dataCast.summary,
+            image: dataCast.image.original,
+            rating: dataCast.rating.average,
+            genres: dataCast.genres,
+            id: dataCast.id
+        });
         setGenres(dataCast.genres)
         setActorInfo(actor)
         setLoading(false)
@@ -32,10 +41,10 @@ const ShowInfo = ({ match }) => {
 
 
     return (
-
-        // {loading ? <Loader type='Plane' width={200} height={400} color='#00CDBF' /> : null}
         <div style={{ minHeight: '100%', width: '55%', margin: 'auto' }}>
+            {loading ? <Loader type='Plane' width={200} height={400} color='#00CDBF' /> : null}
             <ShowDescription showInfo={showInfo} episodesNumber={episodesNumber} genres={genres} />
+            <ActorInfo actorInfo={actorInfo} />
         </div>
     );
 }

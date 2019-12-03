@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Shows from './components/page/Shows';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import ShowInfo from './components/page/ShowInfo';
+import Episodes from './components/page/Episodes';
 
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/' component={Shows} />
-        <Route exact path='/showinfo/:id' component={ShowInfo} />
+        <Route path='/showinfo/:id/episodes' component={Episodes} />
+        <Route path='/showinfo/:id' component={ShowInfo} />
       </Switch>
       <Footer />
     </div>

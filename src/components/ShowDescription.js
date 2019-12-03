@@ -2,9 +2,10 @@ import React from 'react';
 import './.ShowDescription.css';
 import Genres from './Genres';
 import { FaStar } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
-const ShowDescription = ({ showInfo, episodesNumber, genres }) => {
+const ShowDescription = ({ showInfo, episodesNumber }) => {
 
     return (
         <div className='show-info' >
@@ -15,7 +16,10 @@ const ShowDescription = ({ showInfo, episodesNumber, genres }) => {
                 <h1>{showInfo.name}</h1>
                 <Genres showInfo={showInfo} />
                 <h3><FaStar className='icon-star' />{showInfo.rating}</h3>
-                <h4>See all Episodes: {episodesNumber}</h4>
+
+                <Link to={`/showinfo/${showInfo.id}/episodes`}>
+                    <h4>See all Episodes: {episodesNumber}</h4>
+                </Link>
                 <p className='description-text' dangerouslySetInnerHTML={{ __html: showInfo.descriptions }} />
             </div>
         </div>
