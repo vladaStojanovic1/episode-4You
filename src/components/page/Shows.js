@@ -6,6 +6,10 @@ import '../page/.Show.css';
 import Loader from 'react-loader-spinner'
 import ButtonListCard from '../ButtonListCard';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
+import GridLoader from "react-spinners/GridLoader";
+
+
+
 
 const Shows = () => {
     // Get list or card UI
@@ -93,16 +97,18 @@ const Shows = () => {
 
 
     return (
-        <div style={{ textAlign: 'center', minHeight: '100%' }}>
+        <div style={{ textAlign: 'center', minHeight: '100%', margin: '0 auto' }}>
             <SearchBar filterShows={filterShows} handleFilter={handleFilter} />
-            <ButtonListCard
+            {!loading ? <ButtonListCard
                 handleSort={handleSort}
                 changeView={changeView}
                 cardList={cardList}
                 ascending={ascending}
                 error={error}
-            />
-            {loading ? <Loader type='Plane' width={200} height={400} color='#00CDBF' /> : <DisplayShows shows={shows} cardList={cardList} />}
+            /> : null}
+            {/* {loading ? <Loader type='Plane' width={200} height={400} color='#00CDBF' /> : <DisplayShows shows={shows} cardList={cardList} />} */}
+            <DisplayShows shows={shows} cardList={cardList} />
+            {loading ? <div className='loader'><GridLoader color={'#00CDBF'} size={100} /></div> : null}
         </div>
     );
 }

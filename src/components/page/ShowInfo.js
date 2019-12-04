@@ -3,6 +3,11 @@ import { Actor } from '../entities/Actor';
 import ShowDescription from '../ShowDescription';
 import Loader from 'react-loader-spinner'
 import ActorInfo from '../ActorInfo';
+import GridLoader from "react-spinners/GridLoader";
+import '../page/.ShowInfo.css';
+
+
+
 
 const ShowInfo = ({ match }) => {
     /***************** State *****************/
@@ -39,12 +44,15 @@ const ShowInfo = ({ match }) => {
         setLoading(false)
     }
 
-
     return (
-        <div style={{ minHeight: '100%', width: '55%', margin: 'auto' }}>
-            {loading ? <Loader type='Plane' width={200} height={400} color='#00CDBF' /> : null}
-            <ShowDescription showInfo={showInfo} episodesNumber={episodesNumber} genres={genres} />
-            <ActorInfo actorInfo={actorInfo} />
+
+        <div style={{ minHeight: '100%' }}>
+            {loading ? <div className='loader'><GridLoader size={100} color={'#00CDBF'} /></div> :
+                <div style={{ minHeight: '100%', width: '55%', margin: 'auto' }}>
+                    <ShowDescription showInfo={showInfo} episodesNumber={episodesNumber} genres={genres} />
+                    <ActorInfo actorInfo={actorInfo} />
+                </div>
+            }
         </div>
     );
 }

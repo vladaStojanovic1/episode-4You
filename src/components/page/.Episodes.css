@@ -1,0 +1,16 @@
+.episode-content{
+    display: grid;
+    /* grid-template-columns: repeat(auto-fill,minmax(100px, 150px)); */
+    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+    width: 55%;
+    margin: auto;
+    grid-gap: 20px;
+    min-height: 100%;
+    margin-top: 70px;
+}
+.back-link{
+    text-align: center;
+}
+.back-link a {
+    text-decoration: none;
+}
