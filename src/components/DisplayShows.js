@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './.ShowCard.css';
 import DisplayCard from './DisplayCard';
 import DisplayList from './DisplayList';

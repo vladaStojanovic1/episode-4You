@@ -1,16 +1,35 @@
 .episode-content{
     display: grid;
-    /* grid-template-columns: repeat(auto-fill,minmax(100px, 150px)); */
     grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
     width: 55%;
     margin: auto;
     grid-gap: 20px;
     min-height: 100%;
-    margin-top: 70px;
+    /* margin-top: 70px; */
 }
 .back-link{
     text-align: center;
 }
 .back-link a {
     text-decoration: none;
+}
+
+.back-div{
+        width: 54%;
+        margin: auto;
+        margin: 33px auto;
+        margin-bottom: 20px;
+
+}
+.back-div button{
+    border: none;
+    background: repeating-linear-gradient(45deg, #d39e00, transparent 116px);
+    padding: 3px;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
 }

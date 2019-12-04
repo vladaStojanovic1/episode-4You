@@ -12,7 +12,7 @@ const DisplayList = ({ shows }) => {
                     <Link to={`showinfo/${show.id}`}>
                         <div className='show-list' key={index}>
                             <div className='image-list-div'>
-                                <img className='image-list' src={show.image} />
+                                <img className='image-list' src={show.image} alt='' />
                             </div>
 
                             <LightSpeed right cascade>

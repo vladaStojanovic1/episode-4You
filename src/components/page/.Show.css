@@ -1,12 +1,4 @@
-/* .shows-content-card{
-    display: grid;
-    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
-    grid-column-gap: 30px;
-    width: 55%;
-    margin:50px auto;
-    text-align: center;
-    min-height: 100%;
-} */
+
 .popular-shows{
     font-weight: 500;
     font-size: 40px;

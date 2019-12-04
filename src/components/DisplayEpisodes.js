@@ -1,19 +1,24 @@
 import React from 'react';
 import './.DisplayEpisodes.css';
+import { Link } from 'react-router-dom';
 
-const DisplayEpisodes = ({ episodes }) => {
+const DisplayEpisodes = ({ episodes, showId }) => {
 
 
     return (
         <div style={{ minHeight: '100%' }} className='episode-content'>
+
             {episodes.map((episode, index) => {
+
                 return (
-                    <div className='episode-item' key={index}>
-                        <img src={episode.image} />
-                        <span className='name'>{episode.name}</span>
-                        <span className='episode'>Episode: {episode.number}</span>
-                        <span className='season'>Season: {episode.season}</span>
-                    </div>
+                    <Link to={`/showinfo/${showId}/episodes/${episode.id}/episode`} key={index}>
+                        <div className='episode-item' >
+                            <img src={episode.image} alt='' />
+                            <span className='name'>{episode.name}</span>
+                            <span className='episode'>Episode: {episode.number}</span>
+                            <span className='season'>Season: {episode.season}</span>
+                        </div>
+                    </Link>
                 )
             })}
         </div>

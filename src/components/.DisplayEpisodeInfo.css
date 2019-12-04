@@ -1,0 +1,77 @@
+.episodeInfo-content{
+    display: grid;
+    /* grid-template-rows: repeat(auto-fill, 3,1fr); */
+    width: 55%;
+    margin:80px auto;
+}
+.episode-img-div img{
+    width: 100%;
+}
+.episode-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.summary{
+    margin-top: 30px;
+    text-align: center;
+}
+.url{
+    border: none;
+    background: repeating-linear-gradient(45deg, #d39e00, transparent 116px);
+    padding: 3px;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+}
+.episode-num{
+    background: repeating-linear-gradient(23deg, rgb(213, 213, 213), transparent 62px);
+    border-radius: 10px;
+    padding: 3px;
+}
+.episode-season{
+    background: repeating-linear-gradient(23deg, rgb(213, 213, 213), transparent 62px);
+    border-radius: 10px;
+    padding: 3px;
+    margin-top: 3px;
+}
+span{
+    font-weight: bold;
+    color: #767676;
+}
+.episode-num svg path {
+    color: #767676;
+}
+
+.summary h3{
+    margin-bottom: 10px;
+    font-size: 23px;
+}
+
+.episode-img-div img{
+    box-shadow: 1px 0px 5px 0px black;
+    transition: ease 0.5s;
+}
+.episode-img-div img:hover{
+    transform: scale(1.01);
+    transition: ease 0.5s;
+    cursor: pointer;
+}
+
+.back-btn{
+    border: none;
+    background: repeating-linear-gradient(45deg, #d39e00, transparent 116px);
+    padding: 3px;
+    outline: none;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 13px;
+    margin-bottom: 20px;
+}

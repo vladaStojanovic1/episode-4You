@@ -9,10 +9,10 @@ const DisplayCard = ({ shows }) => {
         <>
             {shows.map((show, index) => {
                 return (
-                    <Link to={`showinfo/${show.id}`}>
+                    <Link to={`showinfo/${show.id}`} key={index}>
                         <Flip left cascade>
-                            <div className='show-card' key={index}>
-                                <img src={show.image} />
+                            <div className='show-card' >
+                                <img src={show.image} alt='' />
                                 <h5 style={{ marginTop: '10px' }}>{show.name}</h5>
                                 <span>{show.rating}</span>
                             </div>

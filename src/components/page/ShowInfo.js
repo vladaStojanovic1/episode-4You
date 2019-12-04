@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Actor } from '../entities/Actor';
 import ShowDescription from '../ShowDescription';
-import Loader from 'react-loader-spinner'
 import ActorInfo from '../ActorInfo';
 import GridLoader from "react-spinners/GridLoader";
 import '../page/.ShowInfo.css';
-
-
-
 
 const ShowInfo = ({ match }) => {
     /***************** State *****************/

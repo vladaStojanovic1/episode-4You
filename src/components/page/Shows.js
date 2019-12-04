@@ -3,13 +3,9 @@ import { Show } from '../entities/Show';
 import SearchBar from '../SearchBar';
 import DisplayShows from '../DisplayShows';
 import '../page/.Show.css';
-import Loader from 'react-loader-spinner'
 import ButtonListCard from '../ButtonListCard';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import GridLoader from "react-spinners/GridLoader";
-
-
-
 
 const Shows = () => {
     // Get list or card UI
@@ -106,7 +102,6 @@ const Shows = () => {
                 ascending={ascending}
                 error={error}
             /> : null}
-            {/* {loading ? <Loader type='Plane' width={200} height={400} color='#00CDBF' /> : <DisplayShows shows={shows} cardList={cardList} />} */}
             <DisplayShows shows={shows} cardList={cardList} />
             {loading ? <div className='loader'><GridLoader color={'#00CDBF'} size={100} /></div> : null}
         </div>
