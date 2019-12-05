@@ -9,7 +9,7 @@ const DisplayCard = ({ shows }) => {
         <>
             {shows.map((show, index) => {
                 return (
-                    <Link to={`showinfo/${show.id}`} key={index}>
+                    <Link to={`showinfo/${show.id}`} key={index} className='card-link'>
                         <Flip left cascade>
                             <div className='show-card' >
                                 <img src={show.image} alt='' />

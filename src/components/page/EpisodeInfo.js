@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import DisplayEpisodeInfo from '../DisplayEpisodeInfo';
 import GridLoader from "react-spinners/GridLoader";
-import '../page/.EpisodeInfo.css';
 
 const EpisodeInfo = ({ match }) => {
 
+    /********** State  ***********/
     const [episodeInfo, setEpisodeInfo] = useState({ name: '', number: '', season: '', image: '', summary: '', url: '' });
     const [loading, setLoading] = useState(true);
+    /********** State  ***********/
 
     const { episodeId } = match.params;
     const fetchEpisodeInfo = async () => {
@@ -30,7 +31,7 @@ const EpisodeInfo = ({ match }) => {
     }, [])
 
     return (
-        <div style={{ minHeight: '100%' }}>
+        <div style={{ minHeight: '100%' }} >
             {loading ?
                 <div className='loader'><GridLoader size={100} color={'#00CDBF'} /></div> :
                 <DisplayEpisodeInfo

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-rows: repeat(auto-fill,minmax(200px,1fr));
     width: 55%;
-    margin:50px auto;
+    margin:30px auto;
     text-align: center;
     min-height: 100%;
 }
@@ -21,7 +21,6 @@
     justify-content: space-evenly;
     width: 100%;
     padding: 30px;
-    /* background: linen; */
     text-align: start
 }
 .list-info h2{
@@ -41,4 +40,44 @@
 
 .icon-star path{
     color: #d39e0082;
+}
+
+.list-link{
+    text-decoration:none;
+}
+
+
+
+/********** Responsive  ***********/
+@media screen and (max-width: 798px){
+    .shows-content-list{
+        grid-template-rows: repeat(auto-fill,minmax(180px,1fr));
+        width: 85%;
+        grid-gap: 15px;
+    }
+    .image-list{
+        width: 100%;
+    }
+    .list-info p{
+        margin-top: 0;
+        font-size: 11px;
+    }
+    .list-info{
+        padding: 0;
+    }
+    .list-rating{
+        font-size: 18px;
+    }
+    .list-info h2{
+        font-size: 19px;
+    }
+    .list-info{
+        margin-left: 20px;
+    }
+    .list-info h5{
+        font-size: 12px;
+    }
+    .show-list{
+        margin-bottom: 0;
+    }
 }

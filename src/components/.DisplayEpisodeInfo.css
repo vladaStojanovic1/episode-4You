@@ -1,6 +1,5 @@
 .episodeInfo-content{
     display: grid;
-    /* grid-template-rows: repeat(auto-fill, 3,1fr); */
     width: 55%;
     margin:80px auto;
 }
@@ -75,3 +74,12 @@ span{
     font-size: 13px;
     margin-bottom: 20px;
 }
+
+
+
+/********** Responsive  ***********/
+@media screen and (max-width: 798px){
+    .episodeInfo-content{
+        width: 85%;
+    }
+ }

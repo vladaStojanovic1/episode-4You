@@ -1,8 +1,8 @@
 import React from 'react';
 import './.ShowCard.css';
+import './.DisplayCard.css';
 import DisplayCard from './DisplayCard';
 import DisplayList from './DisplayList';
-import './.DisplayCard.css';
 
 const DisplayShows = ({ shows, cardList }) => {
 

@@ -10,3 +10,13 @@
 .error{
     min-height: calc(100vh - 340px);
 }
+
+/********** Responsive  ***********/
+@media screen and (max-width: 798px){
+    .error svg {
+        font-size: 125px;
+    }
+    .error h3{
+        font-size: 23px;
+    }
+ }

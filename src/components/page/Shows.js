@@ -53,12 +53,12 @@ const Shows = () => {
             return new Show(show.name, show.image.medium, show.rating.average, show.id, show.genres, show.premiered)
         })
         // Sort by abc
-        const sortedByRating = newShows.sort((a, b) => {
+        const sortedByAbc = newShows.sort((a, b) => {
             if (a.name < b.name) return -1;
             else if (a.name > b.name) return 1;
             return 0;
         })
-        setShows(sortedByRating);
+        setShows(sortedByAbc);
         setLoading(false)
         localStorage.setItem('my-shows', JSON.stringify(newShows));
     }
@@ -91,9 +91,8 @@ const Shows = () => {
         }
     }
 
-
     return (
-        <div style={{ textAlign: 'center', minHeight: '100%', margin: '0 auto' }}>
+        <div className='shows-content'>
             <SearchBar filterShows={filterShows} handleFilter={handleFilter} />
             {!loading ? <ButtonListCard
                 handleSort={handleSort}
@@ -103,7 +102,7 @@ const Shows = () => {
                 error={error}
             /> : null}
             <DisplayShows shows={shows} cardList={cardList} />
-            {loading ? <div className='loader'><GridLoader color={'#00CDBF'} size={100} /></div> : null}
+            {loading ? <div className='loader'><GridLoader color={'#00CDBF'} size={95} /></div> : null}
         </div>
     );
 }

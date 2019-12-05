@@ -27,7 +27,7 @@ const Episodes = ({ match }) => {
     }, [])
 
     return (
-        <div className='episode-div' style={{ minHeight: '100%' }}>
+        <div className='episode-div'>
 
             <div className='back-div'>
                 <Link to={`/showinfo/${match.params.id}`}>

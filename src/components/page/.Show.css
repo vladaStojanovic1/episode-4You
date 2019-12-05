@@ -12,3 +12,9 @@
      width: 6em; 
      height: 6em; 
 }
+
+.shows-content{
+    min-height: 100%;
+    text-align: center;
+    margin: 0 auto;
+}

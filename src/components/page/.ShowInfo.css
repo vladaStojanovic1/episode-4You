@@ -6,3 +6,39 @@
     width: 6em; 
     height: 6em; 
 }
+
+.show-info-content{
+    min-height: 100%;
+    width: 55%;
+    margin: auto;
+}
+
+
+
+/********** Responsive  ***********/
+@media screen and (max-width: 798px){
+   .show-info-content{
+       width: 85%;
+   }
+   .show-info{
+        grid-template-columns: repeat(auto-fit,minmax(318px,327px));
+        grid-gap: 8px;
+   }
+   .show-info-description h1{
+        font-size: 30px;
+        font-weight: bold;
+   }
+   .genre-item{
+       padding: 2px;
+   }
+   .show-info-description h3{
+       font-size: 25px;
+   }
+   .show-info-description h4{
+       font-size: 20px;
+   }
+   .actor-title{
+       width: 75%;
+       font-size: 30px;
+   }
+  }

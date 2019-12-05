@@ -42,10 +42,15 @@ const ShowInfo = ({ match }) => {
 
     return (
 
-        <div style={{ minHeight: '100%' }}>
+        <div style={{ minHeight: '100%' }} >
+
             {loading ? <div className='loader'><GridLoader size={100} color={'#00CDBF'} /></div> :
-                <div style={{ minHeight: '100%', width: '55%', margin: 'auto' }}>
-                    <ShowDescription showInfo={showInfo} episodesNumber={episodesNumber} genres={genres} />
+
+                <div className='show-info-content'>
+                    <ShowDescription
+                        showInfo={showInfo}
+                        episodesNumber={episodesNumber}
+                        genres={genres} />
                     <ActorInfo actorInfo={actorInfo} />
                 </div>
             }

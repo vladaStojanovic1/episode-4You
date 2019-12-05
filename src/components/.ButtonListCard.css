@@ -30,3 +30,16 @@
 .sort-btn svg path{
     color: black;
 }
+
+
+
+
+/********** Responsive  ***********/
+@media screen and (max-width: 798px){
+    .btn-div{
+      width: 85%;
+    }
+    .title-show{
+        font-size: 22px;
+    }
+  }

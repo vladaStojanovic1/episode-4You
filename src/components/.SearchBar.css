@@ -12,3 +12,12 @@
 .search-bar{
     text-align: center;
 }
+
+
+/********** Responsive  ***********/
+@media screen and (max-width: 798px){
+    .input-search{
+      width: 80%;
+      margin-top: 30px;
+    }
+  }

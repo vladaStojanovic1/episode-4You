@@ -6,7 +6,7 @@ const DisplayEpisodes = ({ episodes, showId }) => {
 
 
     return (
-        <div style={{ minHeight: '100%' }} className='episode-content'>
+        <div className='episode-content'>
 
             {episodes.map((episode, index) => {
 

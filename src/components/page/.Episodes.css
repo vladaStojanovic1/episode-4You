@@ -5,7 +5,6 @@
     margin: auto;
     grid-gap: 20px;
     min-height: 100%;
-    /* margin-top: 70px; */
 }
 .back-link{
     text-align: center;
@@ -13,12 +12,11 @@
 .back-link a {
     text-decoration: none;
 }
-
 .back-div{
-        width: 54%;
-        margin: auto;
-        margin: 33px auto;
-        margin-bottom: 20px;
+    width: 54%;
+    margin: auto;
+    margin: 33px auto;
+    margin-bottom: 20px;
 
 }
 .back-div button{
@@ -32,4 +30,7 @@
     cursor: pointer;
     text-decoration: none;
     font-size: 13px;
+}
+.episode-div{
+    min-height: 100%;
 }
