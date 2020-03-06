@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import DisplayEpisodeInfo from '../DisplayEpisodeInfo';
+import DisplayEpisodeInfo from '../../components/displayEpisodeInfo/DisplayEpisodeInfo';
 import GridLoader from "react-spinners/GridLoader";
 
 const EpisodeInfo = ({ match }) => {

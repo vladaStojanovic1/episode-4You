@@ -1,6 +1,6 @@
 import React from 'react';
 import './.ShowDescription.css';
-import Genres from './Genres';
+import Genres from '../genres/Genres';
 import { FaStar } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 

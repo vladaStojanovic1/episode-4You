@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Episode } from '../entities/Episode';
-import DisplayEpisodes from '../DisplayEpisodes';
-import '../page/.Episodes.css';
+import { Episode } from '../../entities/Episode';
+import DisplayEpisodes from '../../components/displayEpisodes/DisplayEpisodes';
+import '../episodes/.Episodes.css';
 import { Link } from 'react-router-dom';
 import GridLoader from "react-spinners/GridLoader";
 

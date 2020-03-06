@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Show } from '../entities/Show';
-import SearchBar from '../SearchBar';
-import DisplayShows from '../DisplayShows';
-import '../page/.Show.css';
-import ButtonListCard from '../ButtonListCard';
+import { Show } from '../../entities/Show';
+import SearchBar from '../../components/searchBar/SearchBar';
+import DisplayShows from '../../components/displayShows/DisplayShows';
+import '../shows/.Shows.css';
+import ButtonListCard from '../../components/buttonListCard/ButtonListCard';
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import GridLoader from "react-spinners/GridLoader";
 

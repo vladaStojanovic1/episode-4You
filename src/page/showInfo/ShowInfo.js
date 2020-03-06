@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Actor } from '../entities/Actor';
-import ShowDescription from '../ShowDescription';
-import ActorInfo from '../ActorInfo';
+import { Actor } from '../../entities/Actor';
+import ShowDescription from '../../components/showDescription/ShowDescription';
+import ActorInfo from '../../components/actorInfo/ActorInfo';
 import GridLoader from "react-spinners/GridLoader";
-import '../page/.ShowInfo.css';
+import './.ShowInfo.css';
 
 const ShowInfo = ({ match }) => {
     /***************** State *****************/
@@ -41,11 +41,8 @@ const ShowInfo = ({ match }) => {
     }
 
     return (
-
         <div style={{ minHeight: '100%' }} >
-
             {loading ? <div className='loader'><GridLoader size={100} color={'#00CDBF'} /></div> :
-
                 <div className='show-info-content'>
                     <ShowDescription
                         showInfo={showInfo}
